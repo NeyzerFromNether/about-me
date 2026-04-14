@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeyzerFromNether | Telegram Bot Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="grid-overlay"></div>
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+    </div>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="#about" class="nav-link">Обо мне</a>
+            <a href="#projects" class="nav-link">Проекты</a>
+            <a href="#contact" class="nav-link">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">Telegram Bot Developer</div>
+                <h1 class="hero-title">
+                    <span class="title-line">NeyzerFromNether</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Создаю умных Telegram-ботов и AI-системы. Python, FastAPI, машинное обучение.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://t.me/neyzerfromnether" class="btn btn-primary" target="_blank">
+                        <span class="btn-icon">✦</span>
+                        Связаться
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        Мои проекты
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-dot dot-red"></span>
+                        <span class="code-dot dot-yellow"></span>
+                        <span class="code-dot dot-green"></span>
+                        <span class="code-title">neuron.py</span>
+                    </div>
+                    <pre class="code-content"><code><span class="code-keyword">async</span> <span class="code-func">generate_post</span>(channel):
+    <span class="code-keyword">while</span> True:
+        topic = <span class="code-string">"dark_psychology"</span>
+        <span class="code-comment"># AI анализирует метрики</span>
+        metrics = <span class="code-keyword">await</span> brain.analyze()
+        content = <span class="code-keyword">await</span> ai.generate(topic)
+        
+        <span class="code-comment"># Публикует автономно</span>
+        <span class="code-keyword">await</span> bot.post(channel, content)
+        <span class="code-keyword">await</span> sleep(interval)</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="section-header">
+                <h2 class="section-title">Обо мне</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Разрабатываю Telegram-ботов и AI-системы на Python. Специализируюсь на создании умных ботов с автономной логикой, интеграцией нейросетей и удобными административными панелями.</p>
+                    <p>Мои проекты включают системы автопостинга с AI-генерацией контента, боты для сбора новостей с фильтрацией через Ollama, и музыкальные боты с функционалом Shazam.</p>
+                </div>
+                <div class="tech-stack">
+                    <div class="tech-item">Python</div>
+                    <div class="tech-item">FastAPI</div>
+                    <div class="tech-item">Aiogram</div>
+                    <div class="tech-item">SQLite</div>
+                    <div class="tech-item">g4f</div>
+                    <div class="tech-item">Ollama</div>
+                    <div class="tech-item">HTML/CSS/JS</div>
+                    <div class="tech-item">FFmpeg</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="section-header">
+                <h2 class="section-title">Проекты</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                
+                <article class="project-card" data-project="neuronos">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="project-icon">🧠</div>
+                        <h3 class="project-title">NeuronOS</h3>
+                        <p class="project-desc">Автономная AI-платформа для управления Telegram каналами с генерацией контента и самообучением</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>g4f</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="newsbot">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="project-icon">📰</div>
+                        <h3 class="project-title">News Aggregation Bot</h3>
+                        <p class="project-desc">Бот для сбора новостей с Telegram/VK каналов с AI-фильтрацией через Ollama и рерайтом постов</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Telegram API</span>
+                            <span>Ollama</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-project="audiogeek">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="project-icon">🎵</div>
+                        <h3 class="project-title">AudioGeek Bot</h3>
+                        <p class="project-desc">Telegram-бот для поиска, скачивания и управления музыкой с Shazam, плейлистами и мультиязычностью</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>aiogram 3</span>
+                            <span>FFmpeg</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="section-header">
+                <h2 class="section-title">Контакты</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <p class="contact-text">Есть вопрос или хотите обсудить проект? Свяжитесь со мной!</p>
+                <div class="contact-links">
+                    <a href="https://t.me/neyzerfromnether" class="contact-link" target="_blank">
+                        <span class="contact-icon">✈</span>
+                        Telegram
+                    </a>
+                    <a href="https://github.com/NeyzerFromNether" class="contact-link" target="_blank">
+                        <span class="contact-icon">⌘</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 NeyzerFromNether. Создано с 🧠</p>
+    </footer>
+
+    <!-- Modal Templates -->
+    <div id="modal-neuronos" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <span class="modal-icon">🧠</span>
+                    <h2 class="modal-title">NeuronOS</h2>
+                </div>
+                <div class="modal-description">
+                    <p><strong>Автономная SaaS платформа для управления Telegram каналами с AI-генерацией контента.</strong></p>
+                    
+                    <p>Нейросеть, которая думает. Анализирует. Постит. Учится. Работает полностью автономно — без кнопок "Сгенерировать" и "Опубликовать". AI анализирует метрики каналов и адаптирует контент под аудиторию.</p>
+                    
+                    <h4>Возможности:</h4>
+                    <ul>
+                        <li>🧠 Живой AI — автономная генерация контента</li>
+                        <li>📊 Самообучение — AI анализирует метрики и адаптируется</li>
+                        <li>💀 Вирусный контент — генерация с анти-AI фильтром</li>
+                        <li>⏰ Планировщик — гибкая настройка интервалов постинга</li>
+                        <li>📈 Аналитика — отслеживание эффективности в реальном времени</li>
+                        <li>🎨 Dark UI — премиум интерфейс в тёмной теме</li>
+                    </ul>
+
+                    <h4>Категории контента:</h4>
+                    <p>Dark Psychology, Relationships, Manipulation, Money Psychology, Provocative, Brain Facts</p>
+
+                    <h4>Архитектура:</h4>
+                    <p>Backend: FastAPI + SQLAlchemy + SQLite | Frontend: HTML/CSS/JS с Dark Theme | AI: g4f (бесплатный)</p>
+                </div>
+                <div class="modal-tech">
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>SQLite</span>
+                    <span>g4f</span>
+                    <span>Telegram Bot API</span>
+                    <span>HTML/CSS/JS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-newsbot" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <span class="modal-icon">📰</span>
+                    <h2 class="modal-title">Telegram News Aggregation Bot</h2>
+                </div>
+                <div class="modal-description">
+                    <p><strong>Бот для сбора новостей о происшествиях с Telegram/VK каналов с AI-обработкой.</strong></p>
+                    
+                    <h4>Возможности:</h4>
+                    <ul>
+                        <li>📡 Мониторинг Telegram каналов — сбор постов по ключевым словам (происшествия, ЧП, жесть)</li>
+                        <li>🤖 Фильтрация контента — AI (Ollama) проверяет релевантность постов</li>
+                        <li>✍️ Рерайт постов — переписывает текст в стиле популярных каналов</li>
+                        <li>✅ Модерация — пользователи оценивают посты через кнопки 👍/👎/📝</li>
+                        <li>💬 Обратная связь — накопление причин отклонений для улучшения фильтрации</li>
+                        <li>🔄 Дубликация — проверка на уникальность через хеширование</li>
+                    </ul>
+
+                    <h4>Структура БД:</h4>
+                    <p>newsbot.db | Таблица generated_posts — сгенерированные посты | Таблица feedback — оценки пользователей</p>
+                    
+                    <h4>Команды бота:</h4>
+                    <p>/start — начать работу | /scan — запустить сканирование | /stop — остановить | /admin — панель админа</p>
+                </div>
+                <div class="modal-tech">
+                    <span>Python</span>
+                    <span>Telegram API</span>
+                    <span>VK API</span>
+                    <span>Ollama</span>
+                    <span>SQLite</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-audiogeek" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <span class="modal-icon">🎵</span>
+                    <h2 class="modal-title">AudioGeek Bot</h2>
+                </div>
+                <div class="modal-description">
+                    <p><strong>Telegram-бот для поиска, скачивания и управления музыкой.</strong></p>
+                    
+                    <h4>Возможности:</h4>
+                    <ul>
+                        <li>🔍 Поиск музыки — поиск треков по названию или исполнителю</li>
+                        <li>⬇️ Скачивание — скачивание аудио в чат</li>
+                        <li>📋 Плейлисты — создание, удаление и шаринг плейлистов</li>
+                        <li>❤️ Избранное — лайк треков для персональной подборки</li>
+                        <li>🌊 Твоя Волна — персонализированные рекомендации</li>
+                        <li>🎤 Shazam — распознавание треков по голосовому сообщению</li>
+                        <li>📊 Топ Чарт — ежедневные подборки по жанрам</li>
+                        <li>🌍 Мультиязычность — RU, EN, KK, KY, UK, FR, ES, ID, HI, TR (10 языков)</li>
+                    </ul>
+
+                    <h4>Админ-панель:</h4>
+                    <ul>
+                        <li>📈 Статистика — количество пользователей, пол, страна, рост</li>
+                        <li>📣 Рассылка — отправка сообщений по полу/языку</li>
+                        <li>🎯 Кампании — управление реферальными ссылками</li>
+                        <li>🔗 Шейринг — статистика приглашений</li>
+                    </ul>
+                </div>
+                <div class="modal-tech">
+                    <span>Python</span>
+                    <span>aiogram 3</span>
+                    <span>FFmpeg</span>
+                    <span>Shazam API</span>
+                    <span>SQLite</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
