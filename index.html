@@ -34,42 +34,42 @@
 
     <!-- Desktop -->
     <main class="desktop">
-        <!-- Desktop Icons -->
-        <div class="desktop-icons">
-            <div class="desktop-icon" onclick="openWindow('about')">
-                <div class="icon-folder about"><i class="fas fa-user"></i></div>
-                <span class="icon-label">About Me</span>
-            </div>
-            <div class="desktop-icon" onclick="openWindow('projects')">
-                <div class="icon-folder projects"><i class="fas fa-folder-open"></i></div>
-                <span class="icon-label">Projects</span>
-            </div>
-            <div class="desktop-icon" onclick="openWindow('contact')">
-                <div class="icon-folder contact"><i class="fas fa-envelope"></i></div>
-                <span class="icon-label">Contact</span>
-            </div>
-            <div class="desktop-icon" onclick="openWindow('neuronos')">
-                <div class="icon-folder neuronos"><i class="fas fa-brain"></i></div>
-                <span class="icon-label">NeuronOS</span>
-            </div>
-            <div class="desktop-icon" onclick="openWindow('news')">
-                <div class="icon-folder news"><i class="fas fa-newspaper"></i></div>
-                <span class="icon-label">News Bot</span>
-            </div>
-            <div class="desktop-icon" onclick="openWindow('audiogeek')">
-                <div class="icon-folder audiogeek"><i class="fas fa-music"></i></div>
-                <span class="icon-label">AudioGeek</span>
-            </div>
-        </div>
-
-        <!-- Desktop Label -->
-        <div class="desktop-label">
-            <span class="label-title">NeyzerFromNether</span>
-            <span class="label-subtitle">Telegram Bot Developer & AI Engineer</span>
-        </div>
-
-        <!-- Windows Container -->
+        <!-- Windows Container (includes icons, windows, label) -->
         <div class="windows-container">
+            <!-- Desktop Icons -->
+            <div class="desktop-icons">
+                <div class="desktop-icon" onclick="openWindow('about', event)">
+                    <div class="icon-folder about"><i class="fas fa-user"></i></div>
+                    <span class="icon-label">About Me</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('projects', event)">
+                    <div class="icon-folder projects"><i class="fas fa-folder-open"></i></div>
+                    <span class="icon-label">Projects</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('contact', event)">
+                    <div class="icon-folder contact"><i class="fas fa-envelope"></i></div>
+                    <span class="icon-label">Contact</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('neuronos', event)">
+                    <div class="icon-folder neuronos"><i class="fas fa-brain"></i></div>
+                    <span class="icon-label">NeuronOS</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('news', event)">
+                    <div class="icon-folder news"><i class="fas fa-newspaper"></i></div>
+                    <span class="icon-label">News Bot</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('audiogeek', event)">
+                    <div class="icon-folder audiogeek"><i class="fas fa-music"></i></div>
+                    <span class="icon-label">AudioGeek</span>
+                </div>
+            </div>
+
+            <!-- Desktop Label -->
+            <div class="desktop-label">
+                <span class="label-title">NeyzerFromNether</span>
+                <span class="label-subtitle">Telegram Bot Developer & AI Engineer</span>
+            </div>
+
             <!-- About Window -->
             <div class="window" id="window-about">
                 <div class="window-header">
@@ -289,7 +289,8 @@
                     <div class="project-links">
                         <span class="project-link private">🔒 Закрытый проект</span>
                     </div>
-</div>
+                </div>
+            </div>
 
             <!-- Terminal Window -->
             <div class="window" id="window-terminal">
@@ -311,14 +312,14 @@
 
         <!-- Dock -->
         <div class="dock">
-            <div class="dock-item" data-window="about" title="About Me" onclick="openWindow('about')"><i class="fas fa-user"></i></div>
-            <div class="dock-item" data-window="projects" title="Projects" onclick="openWindow('projects')"><i class="fas fa-folder-open"></i></div>
-            <div class="dock-item" data-window="neuronos" title="NeuronOS" onclick="openWindow('neuronos')"><i class="fas fa-brain"></i></div>
-            <div class="dock-item" data-window="news" title="News Bot" onclick="openWindow('news')"><i class="fas fa-newspaper"></i></div>
-            <div class="dock-item" data-window="audiogeek" title="AudioGeek" onclick="openWindow('audiogeek')"><i class="fas fa-music"></i></div>
-            <div class="dock-item" data-window="contact" title="Contact" onclick="openWindow('contact')"><i class="fas fa-envelope"></i></div>
+            <div class="dock-item" data-window="about" title="About Me"><i class="fas fa-user"></i></div>
+            <div class="dock-item" data-window="projects" title="Projects"><i class="fas fa-folder-open"></i></div>
+            <div class="dock-item" data-window="neuronos" title="NeuronOS"><i class="fas fa-brain"></i></div>
+            <div class="dock-item" data-window="news" title="News Bot"><i class="fas fa-newspaper"></i></div>
+            <div class="dock-item" data-window="audiogeek" title="AudioGeek"><i class="fas fa-music"></i></div>
+            <div class="dock-item" data-window="contact" title="Contact"><i class="fas fa-envelope"></i></div>
             <div class="dock-separator"></div>
-            <div class="dock-item" data-window="terminal" title="Terminal" onclick="openWindow('terminal')"><i class="fas fa-terminal"></i></div>
+            <div class="dock-item" data-window="terminal" title="Terminal"><i class="fas fa-terminal"></i></div>
         </div>
     </main>
 

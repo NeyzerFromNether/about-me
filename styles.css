@@ -96,7 +96,6 @@ body {
     padding: 1.5rem;
     max-width: 100px;
     pointer-events: auto;
-    z-index: 100;
 }
 
 /* ========================================
@@ -188,6 +187,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 600;
 }
 
 .window {
@@ -200,21 +200,94 @@ body {
     min-height: 320px;
     pointer-events: auto;
     display: none;
-    animation: windowOpen 0.2s ease;
     overflow: hidden;
 }
 
 .window.active {
     display: block;
+    animation: windowOpen 0.25s ease-out;
 }
 
 .window.maximized {
     border-radius: 8px;
+    z-index: 3000 !important;
+    top: 35px !important;
+    left: 30px !important;
+    width: calc(100% - 60px) !important;
+    min-width: calc(100% - 60px) !important;
+    height: calc(100% - 85px) !important;
+    position: absolute !important;
+    max-width: none !important;
+    max-height: none !important;
+    pointer-events: auto !important;
+    animation: none !important;
+}
+
+.window.maximizing {
+    animation: macosZoomIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+}
+
+.window.unmaximizing {
+    animation: macosZoomOut 0.25s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+}
+
+@keyframes macosZoomIn {
+    0% {
+        transform: scale(0.8) translateY(20px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes macosZoomOut {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9) translateY(10px);
+        opacity: 0;
+    }
 }
 
 @keyframes windowOpen {
     from { opacity: 0; transform: scale(0.96); }
     to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes windowClose {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.9); }
+}
+
+@keyframes windowMaximize {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes windowUnmaximize {
+    from { opacity: 1; transform: scale(1) translateY(0); }
+    to { opacity: 0; transform: scale(0.9) translateY(20px); }
+}
+
+.window.closing {
+    animation: windowClose 0.15s ease forwards;
+}
+
+.window.maximizing {
+    animation: windowMaximize 0.25s ease-out forwards;
+}
+
+.window.unmaximizing {
+    animation: windowUnmaximize 0.2s ease-in forwards;
+}
+
+.window.active {
+    display: block;
+    animation: windowOpen 0.2s ease;
 }
 
 .window#window-about { top: 12%; left: 18%; }

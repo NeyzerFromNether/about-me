@@ -24,7 +24,9 @@ let activeWindow = null;
 let windowZIndex = 100;
 const windowStates = {};
 
-function openWindow(id) {
+function openWindow(id, e) {
+    if (e) e.stopPropagation();
+    
     const windowEl = document.getElementById(`window-${id}`);
     if (windowEl) {
         if (!windowStates[id]) windowStates[id] = {};
@@ -56,13 +58,11 @@ function openWindow(id) {
 function closeWindow(id) {
     const windowEl = document.getElementById(`window-${id}`);
     if (windowEl) {
-        windowEl.style.opacity = '0';
-        windowEl.style.transform = 'scale(0.9)';
+        windowEl.classList.add('closing');
+        windowEl.classList.remove('active');
         setTimeout(() => {
-            windowEl.classList.remove('active');
+            windowEl.classList.remove('closing');
             windowEl.style.display = 'none';
-            windowEl.style.opacity = '';
-            windowEl.style.transform = '';
         }, 200);
     }
 }
@@ -101,23 +101,30 @@ function maximizeWindow(id) {
         const isMaximized = windowEl.classList.contains('maximized');
         
         if (isMaximized) {
-            windowEl.classList.remove('maximized');
-            windowEl.style.top = windowStates[id]?.top || '';
-            windowEl.style.left = windowStates[id]?.left || '';
-            windowEl.style.width = windowStates[id]?.width || '';
-            windowEl.style.height = windowStates[id]?.height || '';
+            windowEl.classList.add('unmaximizing');
+            setTimeout(() => {
+                windowEl.classList.remove('maximized', 'unmaximizing');
+                windowEl.style.top = windowStates[id]?.top || '';
+                windowEl.style.left = windowStates[id]?.left || '';
+                windowEl.style.width = windowStates[id]?.width || '';
+                windowEl.style.height = windowStates[id]?.height || '';
+            }, 250);
         } else {
             if (!windowStates[id]) windowStates[id] = {};
-            windowStates[id].top = windowEl.style.top;
-            windowStates[id].left = windowEl.style.left;
-            windowStates[id].width = windowEl.style.width;
-            windowStates[id].height = windowEl.style.height;
+            windowStates[id].top = windowEl.style.top || '';
+            windowStates[id].left = windowEl.style.left || '';
+            windowStates[id].width = windowEl.style.width || '';
+            windowStates[id].height = windowEl.style.height || '';
             
-            windowEl.classList.add('maximized');
-            windowEl.style.top = '30px';
+            windowEl.style.top = '35px';
             windowEl.style.left = '30px';
             windowEl.style.width = 'calc(100% - 60px)';
-            windowEl.style.height = 'calc(100% - 110px)';
+            windowEl.style.height = 'calc(100% - 85px)';
+            
+            requestAnimationFrame(() => {
+                windowEl.classList.add('maximized', 'maximizing');
+                setTimeout(() => windowEl.classList.remove('maximizing'), 300);
+            });
         }
     }
 }
@@ -178,6 +185,7 @@ document.querySelectorAll('.window-header').forEach(header => {
 // Desktop icons selection
 document.querySelectorAll('.desktop-icon').forEach(icon => {
     icon.addEventListener('click', function(e) {
+        e.stopPropagation();
         document.querySelectorAll('.desktop-icon').forEach(i => i.classList.remove('selected'));
         this.classList.add('selected');
     });
@@ -220,7 +228,8 @@ document.querySelectorAll('.window').forEach(windowEl => {
 
 // Dock click to open minimized windows
 document.querySelectorAll('.dock-item').forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function(e) {
+        e.stopPropagation();
         const windowId = this.getAttribute('data-window');
         if (windowId) {
             if (this.classList.contains('minimized')) {
