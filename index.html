@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
     <div class="menu-bar">
         <div class="menu-left">
             <span class="apple-logo"><i class="fab fa-apple"></i></span>
-            <span class="menu-item">NeyzerFromNether</span>
+            <span class="menu-item menu-bold">NeyzerFromNether</span>
             <span class="menu-item">File</span>
             <span class="menu-item">Edit</span>
             <span class="menu-item">View</span>
@@ -24,51 +24,78 @@
             <span class="menu-item">Help</span>
         </div>
         <div class="menu-right">
-            <span class="menu-icon"><i class="fas fa-wifi"></i></span>
-            <span class="menu-icon"><i class="fas fa-battery-full"></i></span>
-            <span class="menu-icon"><i class="fas fa-search"></i></span>
-            <span class="menu-icon"><i class="fas fa-control-center"></i></span>
+            <span class="menu-icon" title="Wi-Fi"><i class="fas fa-wifi"></i></span>
+            <span class="menu-icon" title="Battery"><i class="fas fa-battery-full"></i></span>
+            <span class="menu-icon" title="Spotlight"><i class="fas fa-search"></i></span>
+            <span class="menu-icon" title="Control Center"><i class="fas fa-sliders"></i></span>
+            <span class="menu-icon" title="Siri"><i class="fas fa-waveform"></i></span>
             <span class="menu-time" id="clock">12:00</span>
         </div>
     </div>
 
     <!-- Desktop -->
     <main class="desktop">
-        <!-- Windows Container (includes icons, windows, label) -->
         <div class="windows-container">
-            <!-- Desktop Icons -->
+            <!-- Desktop Icons (Grid Layout) -->
             <div class="desktop-icons">
-                <div class="desktop-icon" onclick="openWindow('about', event)">
+                <div class="desktop-icon" onclick="openWindow('about', event)" data-tooltip="Обо мне">
                     <div class="icon-folder about"><i class="fas fa-user"></i></div>
                     <span class="icon-label">About Me</span>
                 </div>
-                <div class="desktop-icon" onclick="openWindow('projects', event)">
+                <div class="desktop-icon" onclick="openWindow('projects', event)" data-tooltip="Все проекты">
                     <div class="icon-folder projects"><i class="fas fa-folder-open"></i></div>
                     <span class="icon-label">Projects</span>
                 </div>
-                <div class="desktop-icon" onclick="openWindow('contact', event)">
+                <div class="desktop-icon" onclick="openWindow('contact', event)" data-tooltip="Контакты">
                     <div class="icon-folder contact"><i class="fas fa-envelope"></i></div>
                     <span class="icon-label">Contact</span>
                 </div>
-                <div class="desktop-icon" onclick="openWindow('neuronos', event)">
+                <div class="desktop-icon" onclick="openWindow('neuronos', event)" data-tooltip="AI Платформа">
                     <div class="icon-folder neuronos"><i class="fas fa-brain"></i></div>
                     <span class="icon-label">NeuronOS</span>
                 </div>
-                <div class="desktop-icon" onclick="openWindow('news', event)">
+                <div class="desktop-icon" onclick="openWindow('news', event)" data-tooltip="Новостной бот">
                     <div class="icon-folder news"><i class="fas fa-newspaper"></i></div>
                     <span class="icon-label">News Bot</span>
                 </div>
-                <div class="desktop-icon" onclick="openWindow('audiogeek', event)">
+                <div class="desktop-icon" onclick="openWindow('audiogeek', event)" data-tooltip="Музыкальный бот">
                     <div class="icon-folder audiogeek"><i class="fas fa-music"></i></div>
                     <span class="icon-label">AudioGeek</span>
+                </div>
+                <!-- Новые иконки для молочных/складских проектов -->
+                <div class="desktop-icon" onclick="openWindow('warehouse', event)" data-tooltip="Складская система">
+                    <div class="icon-folder warehouse"><i class="fas fa-warehouse"></i></div>
+                    <span class="icon-label">Warehouse</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('supply', event)" data-tooltip="Цепочка поставок">
+                    <div class="icon-folder supply"><i class="fas fa-truck"></i></div>
+                    <span class="icon-label">SupplyChain</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('office', event)" data-tooltip="Офисный портал">
+                    <div class="icon-folder office"><i class="fas fa-building"></i></div>
+                    <span class="icon-label">OfficeHub</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('analytics', event)" data-tooltip="Аналитика">
+                    <div class="icon-folder analytics"><i class="fas fa-chart-pie"></i></div>
+                    <span class="icon-label">Analytics</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('inventory', event)" data-tooltip="Инвентаризация">
+                    <div class="icon-folder inventory"><i class="fas fa-boxes"></i></div>
+                    <span class="icon-label">Inventory</span>
+                </div>
+                <div class="desktop-icon" onclick="openWindow('hrbot', event)" data-tooltip="HR Бот">
+                    <div class="icon-folder hrbot"><i class="fas fa-user-tie"></i></div>
+                    <span class="icon-label">HR Bot</span>
                 </div>
             </div>
 
             <!-- Desktop Label -->
             <div class="desktop-label">
                 <span class="label-title">NeyzerFromNether</span>
-                <span class="label-subtitle">Telegram Bot Developer & AI Engineer</span>
+                <span class="label-subtitle">Full-Stack Developer & AI Engineer · milkdrink</span>
             </div>
+
+            <!-- ==================== ПРОЕКТЫ ==================== -->
 
             <!-- About Window -->
             <div class="window" id="window-about">
@@ -81,20 +108,35 @@
                     <span class="window-title">About Me</span>
                 </div>
                 <div class="window-body">
-                    <h2>Обо мне</h2>
-                    <p class="about-text">Разрабатываю Telegram-ботов и AI-системы на Python. Специализируюсь на создании умных ботов с автономной логикой, интеграцией нейросетей и удобными административными панелями.</p>
+                    <div class="about-header">
+                        <div class="about-avatar">👨‍💻</div>
+                        <h2>Обо мне</h2>
+                    </div>
+                    <p class="about-text">Full-stack разработчик и AI-инженер. Специализируюсь на создании корпоративных систем: складской учёт, управление цепочками поставок, офисные порталы и умные Telegram-боты. Разрабатываю AI-решения с автономной логикой и удобными админ-панелями для бизнеса.</p>
                     <div class="about-skills">
                         <div class="skill-category">
-                            <h3>Языки</h3>
-                            <p>Python</p>
+                            <h3>Backend</h3>
+                            <p>Python, FastAPI, aiogram 3, Go</p>
                         </div>
                         <div class="skill-category">
-                            <h3>Фреймворки</h3>
-                            <p>FastAPI, aiogram 3</p>
+                            <h3>Frontend</h3>
+                            <p>React, Vue, HTMX, Tailwind</p>
                         </div>
                         <div class="skill-category">
                             <h3>AI/ML</h3>
-                            <p>g4f, Ollama</p>
+                            <p>g4f, Ollama, LangChain, RAG</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Базы данных</h3>
+                            <p>PostgreSQL, SQLite, Redis, MongoDB</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>DevOps</h3>
+                            <p>Docker, GitHub Actions, Nginx, Linux</p>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Бизнес</h3>
+                            <p>ERP, WMS, CRM, SCM</p>
                         </div>
                     </div>
                 </div>
@@ -111,19 +153,49 @@
                     <span class="window-title">My Projects</span>
                 </div>
                 <div class="window-body">
-                    <h2>Мои Проекты</h2>
-                    <div class="projects-list">
-                        <div class="project-item" onclick="openWindow('neuronos')">
-                            <span class="project-name">🧠 NeuronOS</span>
-                            <span class="project-type">AI Platform</span>
+                    <h2>Все проекты</h2>
+                    <div class="project-categories">
+                        <h3>🐄 Корпоративные (milkdrink)</h3>
+                        <div class="projects-list">
+                            <div class="project-item" onclick="openWindow('warehouse')">
+                                <span class="project-name">🏭 MilkDRINK Warehouse</span>
+                                <span class="project-type">WMS</span>
+                            </div>
+                            <div class="project-item" onclick="openWindow('supply')">
+                                <span class="project-name">🚚 SupplyChain Tracker</span>
+                                <span class="project-type">SCM</span>
+                            </div>
+                            <div class="project-item" onclick="openWindow('office')">
+                                <span class="project-name">🏢 OfficeHub</span>
+                                <span class="project-type">ERP</span>
+                            </div>
+                            <div class="project-item" onclick="openWindow('analytics')">
+                                <span class="project-name">📊 MilkDRINK Analytics</span>
+                                <span class="project-type">BI</span>
+                            </div>
+                            <div class="project-item" onclick="openWindow('inventory')">
+                                <span class="project-name">📦 SmartInventory</span>
+                                <span class="project-type">IMS</span>
+                            </div>
+                            <div class="project-item" onclick="openWindow('hrbot')">
+                                <span class="project-name">👔 HR Assistant Bot</span>
+                                <span class="project-type">HRM</span>
+                            </div>
                         </div>
-                        <div class="project-item" onclick="openWindow('news')">
-                            <span class="project-name">📰 News Bot</span>
-                            <span class="project-type">Telegram Bot</span>
-                        </div>
-                        <div class="project-item" onclick="openWindow('audiogeek')">
-                            <span class="project-name">🎵 AudioGeek</span>
-                            <span class="project-type">Music Bot</span>
+                        <h3>🤖 Личные / Open Source</h3>
+                        <div class="projects-list">
+                            <div class="project-item" onclick="openWindow('neuronos')">
+                                <span class="project-name">🧠 NeuronOS</span>
+                                <span class="project-type">AI Platform</span>
+                            </div>
+                            <div class="project-item" onclick="openWindow('news')">
+                                <span class="project-name">📰 News Bot</span>
+                                <span class="project-type">Telegram Bot</span>
+                            </div>
+                            <div class="project-item" onclick="openWindow('audiogeek')">
+                                <span class="project-name">🎵 AudioGeek</span>
+                                <span class="project-type">Music Bot</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,6 +213,7 @@
                 </div>
                 <div class="window-body contact-body">
                     <h2>Связаться со мной</h2>
+                    <p class="contact-desc">Открыт к работе над корпоративными проектами, AI-интеграциями и автоматизацией бизнеса</p>
                     <div class="contact-links">
                         <a href="https://t.me/neyzerfromnether" class="contact-btn" target="_blank">
                             <span class="contact-icon">✈️</span>
@@ -150,10 +223,15 @@
                             <span class="contact-icon">🐙</span>
                             <span>GitHub</span>
                         </a>
+                        <a href="mailto:dev@milkdrink.ru" class="contact-btn">
+                            <span class="contact-icon">📧</span>
+                            <span>Email</span>
+                        </a>
                     </div>
-                    <p class="contact-note">Нажмите для связи</p>
                 </div>
             </div>
+
+            <!-- ====== EXISTING PROJECTS ====== -->
 
             <!-- NeuronOS Window -->
             <div class="window" id="window-neuronos">
@@ -174,7 +252,6 @@
                         </div>
                     </div>
                     <p class="project-full-desc">Автономная AI-платформа для управления Telegram каналами. Система анализирует статистику, генерирует контент через нейросети и самообучается на основе метрик эффективности.</p>
-                    
                     <div class="project-section">
                         <h3>Особенности</h3>
                         <ul class="feature-list">
@@ -185,15 +262,9 @@
                             <li>📈 Оптимизация стиля под аудиторию</li>
                         </ul>
                     </div>
-                    
                     <div class="project-tech">
-                        <span>Python</span>
-                        <span>FastAPI</span>
-                        <span>g4f</span>
-                        <span>aiogram</span>
-                        <span>SQLite</span>
+                        <span>Python</span><span>FastAPI</span><span>g4f</span><span>aiogram</span><span>SQLite</span>
                     </div>
-                    
                     <div class="project-links">
                         <a href="https://github.com/NeyzerFromNether/NeuronOS" class="project-link" target="_blank">📂 Исходный код</a>
                     </div>
@@ -219,7 +290,6 @@
                         </div>
                     </div>
                     <p class="project-full-desc">Бот для автоматического сбора новостей с Telegram и VK каналов. Использует локальную нейросеть Ollama для умной фильтрации и рерайта контента.</p>
-                    
                     <div class="project-section">
                         <h3>Особенности</h3>
                         <ul class="feature-list">
@@ -231,15 +301,9 @@
                             <li>📋 Экспорт в различные форматы</li>
                         </ul>
                     </div>
-                    
                     <div class="project-tech">
-                        <span>Python</span>
-                        <span>aiogram 3</span>
-                        <span>Ollama</span>
-                        <span>FastAPI</span>
-                        <span>SQLite</span>
+                        <span>Python</span><span>aiogram 3</span><span>Ollama</span><span>FastAPI</span><span>SQLite</span>
                     </div>
-                    
                     <div class="project-links">
                         <span class="project-link private">🔒 Закрытый проект</span>
                     </div>
@@ -265,7 +329,6 @@
                         </div>
                     </div>
                     <p class="project-full-desc">Мощный Telegram-бот для поиска, скачивания и управления музыкой. Поддерживает распознавание песен через Shazam API, управление плейлистами и мультиязычный интерфейс.</p>
-                    
                     <div class="project-section">
                         <h3>Особенности</h3>
                         <ul class="feature-list">
@@ -277,17 +340,498 @@
                             <li>📊 Статистика прослушивания</li>
                         </ul>
                     </div>
-                    
                     <div class="project-tech">
-                        <span>Python</span>
-                        <span>aiogram 3</span>
-                        <span>FFmpeg</span>
-                        <span>Shazam API</span>
-                        <span>PostgreSQL</span>
+                        <span>Python</span><span>aiogram 3</span><span>FFmpeg</span><span>Shazam API</span><span>PostgreSQL</span>
                     </div>
-                    
                     <div class="project-links">
                         <span class="project-link private">🔒 Закрытый проект</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== NEW MILKDRINK PROJECTS ====== -->
+
+            <!-- ====== INTERACTIVE WMS: MilkDRINK Warehouse ====== -->
+            <div class="window wms-window" id="window-warehouse">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="window-btn close" onclick="closeWindow('warehouse')"></span>
+                        <span class="window-btn minimize" onclick="minimizeWindow('warehouse')"></span>
+                        <span class="window-btn maximize" onclick="maximizeWindow('warehouse')"></span>
+                    </div>
+                    <span class="window-title">MilkDRINK WMS v2.4 — Warehouse Management</span>
+                </div>
+                <div class="wms-layout">
+                    <!-- WMS Sidebar -->
+                    <div class="wms-sidebar">
+                        <div class="wms-logo">🏭 <span>MilkDRINK</span></div>
+                        <div class="wms-nav">
+                            <div class="wms-nav-item active" data-tab="dash" onclick="wmsSwitchTab('dash')">
+                                <i class="fas fa-tachometer-alt"></i> Дашборд
+                            </div>
+                            <div class="wms-nav-item" data-tab="stock" onclick="wmsSwitchTab('stock')">
+                                <i class="fas fa-boxes"></i> Инвентарь
+                                <span class="wms-badge" id="wmsTotalItems">0</span>
+                            </div>
+                            <div class="wms-nav-item" data-tab="add" onclick="wmsSwitchTab('add')">
+                                <i class="fas fa-plus-circle"></i> Приёмка
+                            </div>
+                            <div class="wms-nav-item" data-tab="ship" onclick="wmsSwitchTab('ship')">
+                                <i class="fas fa-truck-loading"></i> Отгрузка
+                            </div>
+                            <div class="wms-nav-item" data-tab="zones" onclick="wmsSwitchTab('zones')">
+                                <i class="fas fa-thermometer-half"></i> Зоны
+                            </div>
+                            <div class="wms-nav-item" data-tab="scan" onclick="wmsSwitchTab('scan')">
+                                <i class="fas fa-qrcode"></i> Сканер
+                            </div>
+                        </div>
+                        <div class="wms-sidebar-footer">
+                            <div class="wms-user">👨‍💻 admin@milkdrink</div>
+                            <div class="wms-sync" id="wmsSyncStatus">🟢 Online</div>
+                        </div>
+                    </div>
+
+                    <!-- WMS Main Content -->
+                    <div class="wms-main">
+                        <!-- === DASHBOARD TAB === -->
+                        <div class="wms-tab active" id="wmsTab-dash">
+                            <div class="wms-tab-header">
+                                <h2>📊 Дашборд склада</h2>
+                                <span class="wms-date" id="wmsDashDate"></span>
+                            </div>
+                            <div class="wms-stats-grid">
+                                <div class="wms-stat-card">
+                                    <div class="wms-stat-icon" style="background:linear-gradient(135deg,#667eea,#764ba2)">📦</div>
+                                    <div class="wms-stat-info">
+                                        <span class="wms-stat-val" id="statTotalItems">0</span>
+                                        <span class="wms-stat-lbl">Всего позиций</span>
+                                    </div>
+                                </div>
+                                <div class="wms-stat-card">
+                                    <div class="wms-stat-icon" style="background:linear-gradient(135deg,#f093fb,#f5576c)">⚠️</div>
+                                    <div class="wms-stat-info">
+                                        <span class="wms-stat-val" id="statExpiringSoon">0</span>
+                                        <span class="wms-stat-lbl">Истекает срок (&lt;7 дн)</span>
+                                    </div>
+                                </div>
+                                <div class="wms-stat-card">
+                                    <div class="wms-stat-icon" style="background:linear-gradient(135deg,#11998e,#38ef7d)">✅</div>
+                                    <div class="wms-stat-info">
+                                        <span class="wms-stat-val" id="statInStock">0</span>
+                                        <span class="wms-stat-lbl">Годных товаров</span>
+                                    </div>
+                                </div>
+                                <div class="wms-stat-card">
+                                    <div class="wms-stat-icon" style="background:linear-gradient(135deg,#f7971e,#ffd200)">🌡️</div>
+                                    <div class="wms-stat-info">
+                                        <span class="wms-stat-val" id="statTempAlerts">0</span>
+                                        <span class="wms-stat-lbl">Темп. алертов</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wms-dash-row">
+                                <div class="wms-dash-panel">
+                                    <h3>📋 Последние поступления</h3>
+                                    <div class="wms-mini-table" id="dashRecentArrivals"></div>
+                                </div>
+                                <div class="wms-dash-panel">
+                                    <h3>⚠️ Критические уведомления</h3>
+                                    <div class="wms-alerts" id="dashAlerts"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- === INVENTORY TAB === -->
+                        <div class="wms-tab" id="wmsTab-stock">
+                            <div class="wms-tab-header">
+                                <h2>📦 Инвентарь склада</h2>
+                                <div class="wms-tab-actions">
+                                    <input type="text" class="wms-search" placeholder="🔍 Поиск по названию, зоне, штрих-коду..." oninput="wmsFilterStock()">
+                                    <select class="wms-select" onchange="wmsFilterStock()" id="wmsFilterZone">
+                                        <option value="">Все зоны</option>
+                                        <option value="Холодный склад A">❄️ Холодный склад A</option>
+                                        <option value="Холодный склад B">❄️ Холодный склад B</option>
+                                        <option value="Морозильник">🧊 Морозильник</option>
+                                        <option value="Сухой склад">📦 Сухой склад</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="wms-table-wrap">
+                                <table class="wms-table" id="wmsStockTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Штрих-код</th>
+                                            <th>Товар</th>
+                                            <th>Категория</th>
+                                            <th>Зона</th>
+                                            <th>Адрес</th>
+                                            <th>Кол-во</th>
+                                            <th>Срок годности</th>
+                                            <th>t°C</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="wmsStockBody"></tbody>
+                                </table>
+                            </div>
+                            <div class="wms-empty" id="wmsStockEmpty" style="display:none">Нет товаров. Добавьте первую позицию во вкладке «Приёмка».</div>
+                        </div>
+
+                        <!-- === RECEIVING TAB === -->
+                        <div class="wms-tab" id="wmsTab-add">
+                            <div class="wms-tab-header">
+                                <h2>📥 Приёмка товара</h2>
+                            </div>
+                            <form class="wms-form" id="wmsReceivingForm" onsubmit="wmsReceiveItem(event)">
+                                <div class="wms-form-row">
+                                    <div class="wms-form-group">
+                                        <label>Название товара *</label>
+                                        <input type="text" id="wmsName" placeholder="Молоко пастеризованное 3.2%" required>
+                                    </div>
+                                    <div class="wms-form-group">
+                                        <label>Категория</label>
+                                        <select id="wmsCategory">
+                                            <option>Молочная продукция</option><option>Кисломолочная</option><option>Сыры</option>
+                                            <option>Масло/Спреды</option><option>Творог/Сметана</option><option>Сухое молоко</option>
+                                            <option>Детское питание</option><option>Упаковка</option><option>Прочее</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="wms-form-row">
+                                    <div class="wms-form-group">
+                                        <label>Зона хранения</label>
+                                        <select id="wmsZone">
+                                            <option>Холодный склад A (+2…+6°C)</option><option>Холодный склад B (+2…+6°C)</option>
+                                            <option>Морозильник (-18…-24°C)</option><option>Сухой склад (+15…+25°C)</option>
+                                        </select>
+                                    </div>
+                                    <div class="wms-form-group">
+                                        <label>Адрес ячейки</label>
+                                        <input type="text" id="wmsLocation" placeholder="A-12-04" style="text-transform:uppercase">
+                                    </div>
+                                </div>
+                                <div class="wms-form-row">
+                                    <div class="wms-form-group">
+                                        <label>Количество (шт/кг)</label>
+                                        <input type="number" id="wmsQty" value="1" min="1" required>
+                                    </div>
+                                    <div class="wms-form-group">
+                                        <label>Срок годности</label>
+                                        <input type="date" id="wmsExpiry" required>
+                                    </div>
+                                </div>
+                                <div class="wms-form-row">
+                                    <div class="wms-form-group">
+                                        <label>Температурный режим (°C)</label>
+                                        <input type="text" id="wmsTemp" value="+4" placeholder="+4">
+                                    </div>
+                                    <div class="wms-form-group">
+                                        <label>Поставщик</label>
+                                        <input type="text" id="wmsSupplier" placeholder="ООО МолФерма">
+                                    </div>
+                                </div>
+                                <button type="submit" class="wms-btn wms-btn-primary">📥 Принять товар</button>
+                            </form>
+                            <div class="wms-recent" id="wmsRecentReceiving"></div>
+                        </div>
+
+                        <!-- === SHIPPING TAB === -->
+                        <div class="wms-tab" id="wmsTab-ship">
+                            <div class="wms-tab-header">
+                                <h2>🚛 Отгрузка товара</h2>
+                            </div>
+                            <div class="wms-ship-layout">
+                                <div class="wms-ship-panel">
+                                    <h3>📋 Задания на отгрузку</h3>
+                                    <div class="wms-ship-list" id="wmsShipList">
+                                        <div class="wms-empty-sm">Нет активных заданий. Сканируйте или выберите товар для отгрузки.</div>
+                                    </div>
+                                </div>
+                                <div class="wms-ship-panel">
+                                    <h3>🔍 Быстрая отгрузка</h3>
+                                    <div class="wms-form-group">
+                                        <label>Штрих-код / Название</label>
+                                        <div class="wms-scan-row">
+                                            <input type="text" id="wmsShipScan" class="wms-scan-input" placeholder="Отсканируйте или введите код..." onkeydown="if(event.key==='Enter'){wmsQuickShip();event.preventDefault()}">
+                                            <button class="wms-btn wms-btn-primary" onclick="wmsQuickShip()">Отгрузить</button>
+                                        </div>
+                                    </div>
+                                    <div class="wms-ship-log" id="wmsShipLog"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- === ZONES TAB === -->
+                        <div class="wms-tab" id="wmsTab-zones">
+                            <div class="wms-tab-header">
+                                <h2>🌡️ Температурные зоны</h2>
+                                <span class="wms-live">🟢 Live</span>
+                            </div>
+                            <div class="wms-zones-grid" id="wmsZonesGrid">
+                                <div class="wms-zone-card">
+                                    <div class="wms-zone-header">
+                                        <span class="wms-zone-icon">❄️</span>
+                                        <div><h3>Холодный склад A</h3><span class="wms-zone-range">+2…+6°C</span></div>
+                                        <span class="wms-zone-status ok" id="zoneAStatus">✓ Норма</span>
+                                    </div>
+                                    <div class="wms-zone-temp"><span class="wms-temp-val" id="zoneATemp">--</span><span class="wms-temp-unit">°C</span></div>
+                                    <div class="wms-zone-items">Позиций: <strong id="zoneAItems">0</strong></div>
+                                </div>
+                                <div class="wms-zone-card">
+                                    <div class="wms-zone-header">
+                                        <span class="wms-zone-icon">❄️</span>
+                                        <div><h3>Холодный склад B</h3><span class="wms-zone-range">+2…+6°C</span></div>
+                                        <span class="wms-zone-status ok" id="zoneBStatus">✓ Норма</span>
+                                    </div>
+                                    <div class="wms-zone-temp"><span class="wms-temp-val" id="zoneBTemp">--</span><span class="wms-temp-unit">°C</span></div>
+                                    <div class="wms-zone-items">Позиций: <strong id="zoneBItems">0</strong></div>
+                                </div>
+                                <div class="wms-zone-card">
+                                    <div class="wms-zone-header">
+                                        <span class="wms-zone-icon">🧊</span>
+                                        <div><h3>Морозильник</h3><span class="wms-zone-range">-18…-24°C</span></div>
+                                        <span class="wms-zone-status ok" id="freezerStatus">✓ Норма</span>
+                                    </div>
+                                    <div class="wms-zone-temp"><span class="wms-temp-val" id="freezerTemp">--</span><span class="wms-temp-unit">°C</span></div>
+                                    <div class="wms-zone-items">Позиций: <strong id="freezerItems">0</strong></div>
+                                </div>
+                                <div class="wms-zone-card">
+                                    <div class="wms-zone-header">
+                                        <span class="wms-zone-icon">📦</span>
+                                        <div><h3>Сухой склад</h3><span class="wms-zone-range">+15…+25°C</span></div>
+                                        <span class="wms-zone-status ok" id="dryStatus">✓ Норма</span>
+                                    </div>
+                                    <div class="wms-zone-temp"><span class="wms-temp-val" id="dryTemp">--</span><span class="wms-temp-unit">°C</span></div>
+                                    <div class="wms-zone-items">Позиций: <strong id="dryItems">0</strong></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- === SCANNER TAB === -->
+                        <div class="wms-tab" id="wmsTab-scan">
+                            <div class="wms-tab-header">
+                                <h2>📷 Сканер штрих-кодов</h2>
+                            </div>
+                            <div class="wms-scanner-area">
+                                <div class="wms-scanner-frame">
+                                    <div class="wms-scanner-inner">
+                                        <div class="wms-scanner-line"></div>
+                                        <span class="wms-scanner-hint">Наведите камеру на штрих-код</span>
+                                    </div>
+                                </div>
+                                <div class="wms-manual-scan">
+                                    <label>Или введите код вручную:</label>
+                                    <div class="wms-scan-row">
+                                        <input type="text" id="wmsManualBarcode" class="wms-scan-input" placeholder="4601234567890" onkeydown="if(event.key==='Enter'){wmsScanBarcode();event.preventDefault()}">
+                                        <button class="wms-btn wms-btn-primary" onclick="wmsScanBarcode()">🔍 Найти</button>
+                                    </div>
+                                </div>
+                                <div class="wms-scan-result" id="wmsScanResult"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SupplyChain Tracker -->
+            <div class="window" id="window-supply">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="window-btn close" onclick="closeWindow('supply')"></span>
+                        <span class="window-btn minimize" onclick="minimizeWindow('supply')"></span>
+                        <span class="window-btn maximize" onclick="maximizeWindow('supply')"></span>
+                    </div>
+                    <span class="window-title">SupplyChain.app</span>
+                </div>
+                <div class="window-body project-window">
+                    <div class="project-header">
+                        <div class="project-icon-large supply">🚚</div>
+                        <div class="project-title-wrap">
+                            <h2>SupplyChain Tracker</h2>
+                            <span class="project-tag">Supply Chain Management</span>
+                        </div>
+                    </div>
+                    <p class="project-full-desc">Система отслеживания цепочки поставок от фермы до прилавка. GPS-трекинг транспорта, контроль температурного режима в пути, учёт сырья от поставщиков и автоматизация закупок.</p>
+                    <div class="project-section">
+                        <h3>Особенности</h3>
+                        <ul class="feature-list">
+                            <li>🛰️ GPS-трекинг транспорта в реальном времени (WebSocket)</li>
+                            <li>🌡️ IoT-датчики температуры с алертами при отклонениях</li>
+                            <li>🐄 Учёт поставщиков сырого молока с рейтинговой системой</li>
+                            <li>📋 Автоматические закупки при падении остатков ниже минимума</li>
+                            <li>📄 Генерация сопроводительных документов (ТТН, сертификаты)</li>
+                            <li>📈 Аналитика логистических затрат и оптимизация маршрутов</li>
+                            <li>🔗 Интеграция с системой «Меркурий» (Россельхознадзор)</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span><span>FastAPI</span><span>WebSocket</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>MQTT (IoT)</span><span>Vue.js</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link private">🔒 Корпоративный (milkdrink)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OfficeHub -->
+            <div class="window" id="window-office">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="window-btn close" onclick="closeWindow('office')"></span>
+                        <span class="window-btn minimize" onclick="minimizeWindow('office')"></span>
+                        <span class="window-btn maximize" onclick="maximizeWindow('office')"></span>
+                    </div>
+                    <span class="window-title">OfficeHub.app</span>
+                </div>
+                <div class="window-body project-window">
+                    <div class="project-header">
+                        <div class="project-icon-large office">🏢</div>
+                        <div class="project-title-wrap">
+                            <h2>OfficeHub</h2>
+                            <span class="project-tag">Enterprise Portal</span>
+                        </div>
+                    </div>
+                    <p class="project-full-desc">Внутренний корпоративный портал для сотрудников milkdrink. Управление задачами, документооборот, бронирование переговорок, база знаний и корпоративный мессенджер на базе Telegram.</p>
+                    <div class="project-section">
+                        <h3>Особенности</h3>
+                        <ul class="feature-list">
+                            <li>📋 Канбан-доски для управления проектами и задачами</li>
+                            <li>📄 Электронный документооборот с ЭЦП</li>
+                            <li>🏢 Бронирование переговорных комнат с проверкой занятости</li>
+                            <li>📚 База знаний компании: регламенты, инструкции, SOP</li>
+                            <li>💬 Корпоративный Telegram-бот для уведомлений и опросов</li>
+                            <li>👥 Оргструктура компании с профилями сотрудников</li>
+                            <li>📊 Дашборд KPI для руководителей отделов</li>
+                            <li>🎉 Автоматические поздравления с днём рождения</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span><span>FastAPI</span><span>React</span><span>PostgreSQL</span><span>aiogram</span><span>Redis</span><span>MinIO</span><span>Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link private">🔒 Корпоративный (milkdrink)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MilkDRINK Analytics -->
+            <div class="window" id="window-analytics">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="window-btn close" onclick="closeWindow('analytics')"></span>
+                        <span class="window-btn minimize" onclick="minimizeWindow('analytics')"></span>
+                        <span class="window-btn maximize" onclick="maximizeWindow('analytics')"></span>
+                    </div>
+                    <span class="window-title">Analytics.app</span>
+                </div>
+                <div class="window-body project-window">
+                    <div class="project-header">
+                        <div class="project-icon-large analytics">📊</div>
+                        <div class="project-title-wrap">
+                            <h2>MilkDRINK Analytics</h2>
+                            <span class="project-tag">Business Intelligence</span>
+                        </div>
+                    </div>
+                    <p class="project-full-desc">BI-платформа для анализа продаж, производства и логистики. Построение отчётов, прогнозирование спроса через ML-модели, выявление аномалий и визуализация данных в реальном времени.</p>
+                    <div class="project-section">
+                        <h3>Особенности</h3>
+                        <ul class="feature-list">
+                            <li>📈 Интерактивные дашборды с фильтрацией по периодам/регионам</li>
+                            <li>🤖 ML-прогнозирование спроса на 30/60/90 дней</li>
+                            <li>⚠️ Детекция аномалий: резкие падения продаж, перерасход сырья</li>
+                            <li>📊 ABC/XYZ-анализ ассортимента</li>
+                            <li>📧 Автоматическая рассылка отчётов руководителям</li>
+                            <li>🗺️ Геоаналитика продаж по регионам на карте</li>
+                            <li>🔌 Подключение к любым источникам: Excel, 1С, PostgreSQL, API</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span><span>FastAPI</span><span>Pandas</span><span>scikit-learn</span><span>Plotly</span><span>PostgreSQL</span><span>Apache Superset</span><span>Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link private">🔒 Корпоративный (milkdrink)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SmartInventory -->
+            <div class="window" id="window-inventory">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="window-btn close" onclick="closeWindow('inventory')"></span>
+                        <span class="window-btn minimize" onclick="minimizeWindow('inventory')"></span>
+                        <span class="window-btn maximize" onclick="maximizeWindow('inventory')"></span>
+                    </div>
+                    <span class="window-title">Inventory.app</span>
+                </div>
+                <div class="window-body project-window">
+                    <div class="project-header">
+                        <div class="project-icon-large inventory">📦</div>
+                        <div class="project-title-wrap">
+                            <h2>SmartInventory</h2>
+                            <span class="project-tag">Inventory Management System</span>
+                        </div>
+                    </div>
+                    <p class="project-full-desc">Система инвентаризации и учёта товаров с поддержкой RFID-меток и мобильного сканирования. Полный цикл: приёмка → размещение → учёт → списание → переоценка.</p>
+                    <div class="project-section">
+                        <h3>Особенности</h3>
+                        <ul class="feature-list">
+                            <li>🏷️ Поддержка RFID/NFC меток для мгновенной инвентаризации</li>
+                            <li>📱 Мобильное приложение для приёмки и списания</li>
+                            <li>🔄 Автоматическая синхронизация между складом и магазином</li>
+                            <li>📋 Плановая и внеплановая инвентаризация с чек-листами</li>
+                            <li>💰 Автоматическая переоценка при изменении закупочных цен</li>
+                            <li>📊 Отчёты по оборачиваемости, неликвидам, недостачам</li>
+                            <li>🔔 Уведомления о критических остатках в Telegram</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span><span>FastAPI</span><span>React Native</span><span>PostgreSQL</span><span>Redis</span><span>RFID/NFC</span><span>aiogram</span><span>Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link private">🔒 Корпоративный (milkdrink)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Bot -->
+            <div class="window" id="window-hrbot">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="window-btn close" onclick="closeWindow('hrbot')"></span>
+                        <span class="window-btn minimize" onclick="minimizeWindow('hrbot')"></span>
+                        <span class="window-btn maximize" onclick="maximizeWindow('hrbot')"></span>
+                    </div>
+                    <span class="window-title">HRBot.app</span>
+                </div>
+                <div class="window-body project-window">
+                    <div class="project-header">
+                        <div class="project-icon-large hrbot">👔</div>
+                        <div class="project-title-wrap">
+                            <h2>HR Assistant Bot</h2>
+                            <span class="project-tag">HR Automation</span>
+                        </div>
+                    </div>
+                    <p class="project-full-desc">Telegram-бот для автоматизации HR-процессов: онбординг новых сотрудников, оформление отпусков и больничных, сбор обратной связи и корпоративные опросы с AI-анализом ответов.</p>
+                    <div class="project-section">
+                        <h3>Особенности</h3>
+                        <ul class="feature-list">
+                            <li>🎓 Автоматический онбординг: чек-листы, знакомство с командой</li>
+                            <li>📅 Оформление отпусков и отгулов через чат-бота</li>
+                            <li>🤒 Учёт больничных с загрузкой фото документа</li>
+                            <li>📝 Сбор обратной связи 1:1 и анонимные опросы</li>
+                            <li>🧠 AI-анализ тональности ответов сотрудников</li>
+                            <li>📊 Автоматическая отчётность для HR-директора</li>
+                            <li>🎯 Трекинг целей и OKR сотрудников</li>
+                            <li>🔗 Интеграция с календарями (Google, Яндекс)</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span>Python</span><span>aiogram 3</span><span>FastAPI</span><span>PostgreSQL</span><span>Ollama (AI)</span><span>Redis</span><span>Google API</span><span>Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="project-link private">🔒 Корпоративный (milkdrink)</span>
                     </div>
                 </div>
             </div>
@@ -300,11 +844,17 @@
                         <span class="window-btn minimize" onclick="minimizeWindow('terminal')"></span>
                         <span class="window-btn maximize" onclick="maximizeWindow('terminal')"></span>
                     </div>
-                    <span class="window-title">Terminal — bash</span>
+                    <span class="window-title">Terminal — zsh</span>
                 </div>
                 <div class="window-body terminal-body">
-                    <div class="terminal-content">
-                        <div class="terminal-line">NeyzerFromNether@portfolio ~ % <span class="terminal-cursor">_</span></div>
+                    <div class="terminal-content" id="terminalContent">
+                        <div class="terminal-line"><span class="terminal-prompt">neyzer@milkdrink ~ %</span> neofetch</div>
+                        <div class="terminal-line"><span class="terminal-prompt term-blue">❯</span> OS: macOS 15.2 Sequoia</div>
+                        <div class="terminal-line"><span class="terminal-prompt term-blue">❯</span> Shell: zsh 5.9</div>
+                        <div class="terminal-line"><span class="terminal-prompt term-blue">❯</span> Languages: Python 3.12, Go 1.22</div>
+                        <div class="terminal-line"><span class="terminal-prompt term-blue">❯</span> Company: milkdrink 🐄</div>
+                        <div class="terminal-line"><span class="terminal-prompt term-blue">❯</span> Uptime: 4 years in dev</div>
+                        <div class="terminal-line" style="margin-top:0.5rem"><span class="terminal-prompt">neyzer@milkdrink ~ %</span> <span class="terminal-cursor">_</span></div>
                     </div>
                 </div>
             </div>
@@ -314,12 +864,16 @@
         <div class="dock">
             <div class="dock-item" data-window="about" title="About Me"><i class="fas fa-user"></i></div>
             <div class="dock-item" data-window="projects" title="Projects"><i class="fas fa-folder-open"></i></div>
+            <div class="dock-separator"></div>
             <div class="dock-item" data-window="neuronos" title="NeuronOS"><i class="fas fa-brain"></i></div>
-            <div class="dock-item" data-window="news" title="News Bot"><i class="fas fa-newspaper"></i></div>
-            <div class="dock-item" data-window="audiogeek" title="AudioGeek"><i class="fas fa-music"></i></div>
-            <div class="dock-item" data-window="contact" title="Contact"><i class="fas fa-envelope"></i></div>
+            <div class="dock-item" data-window="warehouse" title="Warehouse WMS"><i class="fas fa-warehouse"></i></div>
+            <div class="dock-item" data-window="supply" title="SupplyChain"><i class="fas fa-truck"></i></div>
+            <div class="dock-item" data-window="office" title="OfficeHub"><i class="fas fa-building"></i></div>
+            <div class="dock-item" data-window="analytics" title="Analytics"><i class="fas fa-chart-pie"></i></div>
+            <div class="dock-item" data-window="hrbot" title="HR Bot"><i class="fas fa-user-tie"></i></div>
             <div class="dock-separator"></div>
             <div class="dock-item" data-window="terminal" title="Terminal"><i class="fas fa-terminal"></i></div>
+            <div class="dock-item" data-window="contact" title="Contact"><i class="fas fa-envelope"></i></div>
         </div>
     </main>
 
@@ -329,9 +883,9 @@
         <div class="context-menu-item">Get Info<span class="shortcut">⌘I</span></div>
         <div class="context-menu-item">Change Desktop Background<span class="shortcut">⌘,</span></div>
         <div class="context-menu-item">Use Stacks</div>
+        <div class="context-menu-sep"></div>
         <div class="context-menu-item">Sort By<span class="shortcut">▾</span></div>
         <div class="context-menu-item">Clean Up</div>
-        <div class="context-menu-item">Clean Up By<span class="shortcut">▾</span></div>
     </div>
 
     <script src="script.js"></script>
