@@ -42,6 +42,10 @@
                     <div class="icon-folder about"><i class="fas fa-user"></i></div>
                     <span class="icon-label">About Me</span>
                 </div>
+                <div class="desktop-icon" onclick="openWindow('anchor', event)">
+                    <div class="icon-folder anchor"><i class="fas fa-anchor"></i></div>
+                    <span class="icon-label">Anchor App</span>
+                </div>
                 <div class="desktop-icon" onclick="openWindow('projects', event)">
                     <div class="icon-folder projects"><i class="fas fa-folder-open"></i></div>
                     <span class="icon-label">Projects</span>
@@ -96,6 +100,50 @@
                             <h3>AI/ML</h3>
                             <p>g4f, Ollama</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anchor Window -->
+            <div class="window" id="window-anchor">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="window-btn close" onclick="closeWindow('anchor')"></span>
+                        <span class="window-btn minimize" onclick="minimizeWindow('anchor')"></span>
+                        <span class="window-btn maximize" onclick="maximizeWindow('anchor')"></span>
+                    </div>
+                    <span class="window-title">Anchor.app</span>
+                </div>
+                <div class="window-body project-window">
+                    <div class="project-header">
+                        <div class="project-icon-large anchor" style="background: linear-gradient(135deg, #3b82f6 0%, #1e293b 100%); display:flex; align-items:center; justify-content:center; color:white; font-size:1.75rem;">⚓</div>
+                        <div class="project-title-wrap">
+                            <h2>Anchor (Якорь)</h2>
+                            <span class="project-tag">Emotional Shield & Self-Regulation</span>
+                        </div>
+                    </div>
+                    <p class="project-full-desc">Персональный мобильный сервис эмоциональной саморегуляции и трекинга самоконтроля. Разработан как «эмоциональный щит» между импульсом (тревога/обида) и действием (давление/конфликт).</p>
+                    
+                    <div class="project-section">
+                        <h3>Ключевые фичи</h3>
+                        <ul class="feature-list">
+                            <li>🛡️ Stealth Mode (Стелс-Рейд Выдержки) с таймером и XP-геймификацией</li>
+                            <li>🌊 Emergency Vector UI — интерактивный экран заземления и дыхания</li>
+                            <li>📝 Decoupling Log — сухой разбор мыслей после шторма</li>
+                            <li>✨ Clean Light Minimalism эстетика (#FFFFFF, #3B82F6, #1E293B)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Clean Architecture</span>
+                        <span>Feature-First</span>
+                        <span>SharedPreferences</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://github.com/NeyzerFromNether/about-me" class="project-link" target="_blank">📂 Исходный код (в репозитории)</a>
                     </div>
                 </div>
             </div>
@@ -313,6 +361,7 @@
         <!-- Dock -->
         <div class="dock">
             <div class="dock-item" data-window="about" title="About Me"><i class="fas fa-user"></i></div>
+            <div class="dock-item" data-window="anchor" title="Anchor App"><i class="fas fa-anchor"></i></div>
             <div class="dock-item" data-window="projects" title="Projects"><i class="fas fa-folder-open"></i></div>
             <div class="dock-item" data-window="neuronos" title="NeuronOS"><i class="fas fa-brain"></i></div>
             <div class="dock-item" data-window="news" title="News Bot"><i class="fas fa-newspaper"></i></div>

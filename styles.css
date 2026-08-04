@@ -137,6 +137,7 @@ body {
 }
 
 .icon-folder.about { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.icon-folder.anchor { background: linear-gradient(135deg, #3b82f6 0%, #1e293b 100%); }
 .icon-folder.projects { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
 .icon-folder.contact { background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%); }
 .icon-folder.neuronos { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
